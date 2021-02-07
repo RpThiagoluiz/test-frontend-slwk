@@ -31,7 +31,13 @@ export const RightSide = styled.div`
 
 export const Subtitle = styled.h3``;
 
-export const Input = styled.input``;
+export const Input = styled.input`
+  width: 100%;
+  height: 30px;
+
+  border-radius: 5px;
+  margin-bottom: 25px;
+`;
 
 export const TextArea = styled.textarea`
   resize: none;
