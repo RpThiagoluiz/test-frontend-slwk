@@ -8,6 +8,7 @@ import {
   RightSide,
   Subtitle,
   Input,
+  InputCheckbox,
   TextArea,
   OptionLine,
   Label,
@@ -31,6 +32,7 @@ const FormPage = () => {
       <LeftSide>
         <Subtitle>Name</Subtitle>
         <Input required type="text" placeholder="Ze Fulano" />
+        <Subtitle>Email</Subtitle>
         <Input required type="email" placeholder="ex@exmail.com" />
         <TextArea
           required
@@ -41,16 +43,16 @@ const FormPage = () => {
       </LeftSide>
       <RightSide>
         <OptionLine>
-          <Label class="container">
-            <Input type="checkbox" />
+          <Label>
+            <InputCheckbox type="checkbox" />
             Option 1
           </Label>
-          <Label class="container">
-            <Input type="checkbox" />
+          <Label>
+            <InputCheckbox type="checkbox" />
             Option 2
           </Label>
-          <Label class="container">
-            <Input type="checkbox" />
+          <Label>
+            <InputCheckbox type="checkbox" />
             Option 3
           </Label>
         </OptionLine>
@@ -76,8 +78,8 @@ const FormPage = () => {
           <span>Web design</span>
           <span>ReactJS</span>
         </TagsLine>
+        <Button type="submit">Send</Button>
       </RightSide>
-      <Button type="submit">Send</Button>
     </Form>
   );
 };
