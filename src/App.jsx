@@ -1,2 +1,4 @@
-const App = () => <h1>Hello, hi good morning!</h1>;
+import FormPage from "./pages/FormPage";
+
+const App = () => <FormPage />;
 export default App;
