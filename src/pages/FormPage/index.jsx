@@ -11,10 +11,8 @@ import {
   RightSide,
   Subtitle,
   Input,
-  InputCheckbox,
   TextArea,
   OptionLine,
-  Label,
   Select,
   TagsLine,
   Button,
@@ -24,25 +22,43 @@ const FormPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
+  const [option, setOption] = useState("");
+  const [selected, setSelected] = useState("");
+  const [tags, setTags] = useState();
 
   const handleSubmitForm = async (e) => {
-    e.prevendDefault();
-    await axios; //enviar os dados para a api do trello
+    e.preventDefault();
+    console.log(name, email, description, selected);
+
+    alert("Formulario enviado!");
   };
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmitForm}>
       <LeftSide>
         <Subtitle>Name</Subtitle>
-        <Input required type="text" placeholder="Ze Fulano" />
+        <Input
+          required
+          type="text"
+          placeholder="Ze Fulano"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <Subtitle>Email</Subtitle>
-        <Input required type="email" placeholder="ex@exmail.com" />
-
+        <Input
+          required
+          type="email"
+          placeholder="ex@exmail.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <TextArea
           required
           type="text"
           placeholder="Your mensage here!"
           rows={10}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </LeftSide>
       <RightSide>
@@ -52,12 +68,12 @@ const FormPage = () => {
           <Checkbox text="Option 3" />
         </OptionLine>
         <Subtitle>DropDown</Subtitle>
-        <Select>
-          <option value="0">Test 0</option>
-          <option value="1">Test 1</option>
-          <option value="2">Test 2</option>
-          <option value="3">Test 3</option>
-          <option value="4">Test 4</option>
+        <Select onChange={(e) => setSelected(e.target.value)}>
+          <option value="Test 0">Test 0</option>
+          <option value="Test 1">Test 1</option>
+          <option value="Test 22">Test 2</option>
+          <option value="Test 33">Test 3</option>
+          <option value="Test 4">Test 4</option>
         </Select>
         <Subtitle>Tags</Subtitle>
         <TagsLine>

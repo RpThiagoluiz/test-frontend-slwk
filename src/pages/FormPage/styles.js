@@ -47,6 +47,7 @@ export const TextArea = styled.textarea`
   width: 100%;
 
   margin-top: 25px;
+  padding: 2px;
 
   border: 2px solid #4272f5;
   border-radius: 5px;
@@ -77,20 +78,6 @@ export const OptionLine = styled.div`
   justify-content: flex-start;
 `;
 
-export const Label = styled.label`
-  display: flex;
-  align-items: center;
-  color: #4272f5;
-
-  margin-right: 25px;
-
-  opacity: 0.7;
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    opacity: 1;
-  }
-`;
-
 export const Select = styled.select`
   margin-bottom: 25px;
 
@@ -103,14 +90,21 @@ export const Select = styled.select`
 
   opacity: 0.7;
   transition: all 0.2s ease-in-out;
+
   &:hover {
     opacity: 1;
   }
 `;
 
+export const LastContent = styled.div`
+  display: flex;
+`;
+
 export const TagsLine = styled.div`
   > span {
     padding: 7px;
+    color: #4272f5;
+
     opacity: 0.7;
     transition: all 0.2s ease-in-out;
     &:hover {
@@ -119,8 +113,23 @@ export const TagsLine = styled.div`
   }
 `;
 
-//FinishButton ->
 export const Button = styled.button`
   width: 100px;
   height: 50px;
+
+  position: relative;
+  left: 50px;
+
+  color: #4272f5;
+  background-color: #f0f0f0;
+
+  opacity: 0.7;
+
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    color: #f0f0f0;
+    background-color: #4272f5;
+    opacity: 1;
+  }
 `;
