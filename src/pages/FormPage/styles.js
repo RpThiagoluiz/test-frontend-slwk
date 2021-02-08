@@ -91,16 +91,6 @@ export const Label = styled.label`
   }
 `;
 
-export const InputCheckbox = styled.input`
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-
-  :checked {
-    opacity: 1;
-  }
-`;
-
 export const Select = styled.select`
   margin-bottom: 25px;
 

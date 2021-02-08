@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 //Promise Http
 import axios from "axios";
+//Components
+import Checkbox from "../../components/Checkbox";
+
 //Styles
 import {
   Form,
@@ -34,6 +37,7 @@ const FormPage = () => {
         <Input required type="text" placeholder="Ze Fulano" />
         <Subtitle>Email</Subtitle>
         <Input required type="email" placeholder="ex@exmail.com" />
+
         <TextArea
           required
           type="text"
@@ -43,18 +47,9 @@ const FormPage = () => {
       </LeftSide>
       <RightSide>
         <OptionLine>
-          <Label>
-            <InputCheckbox type="checkbox" />
-            Option 1
-          </Label>
-          <Label>
-            <InputCheckbox type="checkbox" />
-            Option 2
-          </Label>
-          <Label>
-            <InputCheckbox type="checkbox" />
-            Option 3
-          </Label>
+          <Checkbox text="Option 1" />
+          <Checkbox text="Option 2" />
+          <Checkbox text="Option 3" />
         </OptionLine>
         <Subtitle>DropDown</Subtitle>
         <Select>
