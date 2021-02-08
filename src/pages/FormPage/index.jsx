@@ -26,25 +26,22 @@ const FormPage = () => {
   const [selected, setSelected] = useState("");
   const [tags, setTags] = useState();
 
-  const handleOption = () => {
-    setOption(!option);
+  const id = () => {
+    //uuid v4
   };
+
+  const boardId = "601c870f9f30c45ed8ec81fa";
 
   const handleSubmitForm = async (e) => {
     e.preventDefault();
     console.log(name, email, description, selected);
 
     await axios.post(
-      "https://api.trello.com/1/cards?key=0471642aefef5fa1fa76530ce1ba4c85&token=9eb76d9a9d02b8dd40c2f3e5df18556c831d4d1fadbe2c45f8310e6c93b5c548&idList=5abbe4b7ddc1b351ef961414",
-      {
-        name,
-        email,
-        description,
-        option,
-        selected,
-        tags,
-      }
+      `https://api.trello.com/1/boards/${boardId}/cards?key=${process.env.REACT_APP_TRELLO_KEY}&token=${process.env.REACT_APP_TRELLO_TOKEN}&idList=5abbe4b7ddc1b351ef961414`
     );
+
+    const resp = (response) =>
+      console.log(`Response: ${response.status}, ${response.statusText}`);
 
     alert("Formulario enviado!");
     setName("");
@@ -53,6 +50,7 @@ const FormPage = () => {
     setOption("");
     setSelected("");
     setTags("");
+    console.log(resp);
   };
 
   return (
